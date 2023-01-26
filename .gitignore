@@ -5,6 +5,8 @@ build/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources
+mvnw
+mvnw.cmd
 # Log file
 *.log
 
