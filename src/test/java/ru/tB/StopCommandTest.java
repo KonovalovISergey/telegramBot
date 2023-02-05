@@ -3,7 +3,6 @@ package ru.tB;
 import org.junit.jupiter.api.DisplayName;
 import ru.tB.command.Command;
 import ru.tB.command.CommandName;
-import ru.tB.command.StartCommand;
 import ru.tB.command.StopCommand;
 
 @DisplayName("Unit-level testing for StopCommnd")
