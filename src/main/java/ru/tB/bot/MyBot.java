@@ -1,5 +1,6 @@
 package ru.tB.bot;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -7,6 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.tB.command.CommandContainer;
 import ru.tB.command.CommandName;
 import ru.tB.service.SendBotMessageServiceImpl;
+import ru.tB.service.TelegramUserService;
 
 @Component
 public class MyBot extends TelegramLongPollingBot {
@@ -31,8 +33,9 @@ public class MyBot extends TelegramLongPollingBot {
 
 	private final CommandContainer commandContainer;
 
-	public MyBot() {
-		this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+	@Autowired
+	public MyBot(TelegramUserService telegramUserService) {
+		this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
 	}
 
 	@Override

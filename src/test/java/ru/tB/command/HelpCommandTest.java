@@ -1,9 +1,6 @@
-package ru.tB;
+package ru.tB.command;
 
 import org.junit.jupiter.api.DisplayName;
-import ru.tB.command.Command;
-import ru.tB.command.CommandName;
-import ru.tB.command.HelpCommand;
 
 @DisplayName("Unit-level testing for HelpCommand")
 public class HelpCommandTest extends AbstractCommandTest {

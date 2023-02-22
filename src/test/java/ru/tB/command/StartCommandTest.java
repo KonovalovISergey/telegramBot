@@ -1,9 +1,6 @@
-package ru.tB;
+package ru.tB.command;
 
 import org.junit.jupiter.api.DisplayName;
-import ru.tB.command.Command;
-import ru.tB.command.CommandName;
-import ru.tB.command.StartCommand;
 
 @DisplayName("Unit-level testing for StartCommand")
 public class StartCommandTest extends AbstractCommandTest {
@@ -20,6 +17,6 @@ public class StartCommandTest extends AbstractCommandTest {
 
     @Override
     Command getCommand() {
-        return new StartCommand(sendBotMessageService);
+        return new StartCommand(sendBotMessageService, telegramUserService);
     }
 }
