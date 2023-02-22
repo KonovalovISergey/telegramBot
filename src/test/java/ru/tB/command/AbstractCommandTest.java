@@ -1,20 +1,21 @@
-package ru.tB;
+package ru.tB.command;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.tB.bot.MyBot;
-import ru.tB.command.Command;
 import ru.tB.service.SendBotMessageService;
 import ru.tB.service.SendBotMessageServiceImpl;
+import ru.tB.service.TelegramUserService;
 
 public abstract class AbstractCommandTest {
 
     protected MyBot myBot = Mockito.mock(MyBot.class);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(myBot);
 
     abstract String getCommandName();
@@ -44,4 +45,22 @@ public abstract class AbstractCommandTest {
         Mockito.verify(myBot).execute(sendMessage);
     }
 
+    @DisplayName("Unit-level testing for StopCommnd")
+    public static class StopCommandTest extends AbstractCommandTest {
+
+        @Override
+        String getCommandName() {
+            return CommandName.STOP.getCommandName();
+        }
+
+        @Override
+        String getCommandMessage() {
+            return StopCommand.STOP_MESSAGE;
+        }
+
+        @Override
+        Command getCommand() {
+            return new StopCommand(sendBotMessageService, telegramUserService);
+        }
+    }
 }

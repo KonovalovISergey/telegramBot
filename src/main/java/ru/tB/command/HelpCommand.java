@@ -11,8 +11,9 @@ public class HelpCommand implements Command{
             "<b>Начать\\закончить работу с ботом</b>\n" +
             "%s - начать работу со мной \n" +
             "%s - приостановить работу со мной \n" +
-            "%s - получить помощь в работе со мной \n",
-            CommandName.START.getCommandName(), CommandName.STOP.getCommandName(), CommandName.HELP.getCommandName());
+            "%s - получить помощь в работе со мной \n" +
+            "%s - посмотреть статистику \n",
+            CommandName.START.getCommandName(), CommandName.STOP.getCommandName(), CommandName.HELP.getCommandName(), CommandName.STAT.getCommandName());
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;

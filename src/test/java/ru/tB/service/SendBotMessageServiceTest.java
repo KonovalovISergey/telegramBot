@@ -1,4 +1,4 @@
-package ru.tB;
+package ru.tB.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -7,8 +7,6 @@ import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.tB.bot.MyBot;
-import ru.tB.service.SendBotMessageService;
-import ru.tB.service.SendBotMessageServiceImpl;
 
 @DisplayName("Unit-level testing for SendBotMessageService")
 public class SendBotMessageServiceTest {

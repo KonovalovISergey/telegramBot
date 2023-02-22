@@ -1,11 +1,9 @@
-package ru.tB;
+package ru.tB.command;
 
 import org.junit.jupiter.api.DisplayName;
-import ru.tB.command.Command;
-import ru.tB.command.UnknownCommand;
 
 @DisplayName("Unit-level testing for UnknownCommand")
-public class UnknownCommandTest extends  AbstractCommandTest {
+public class UnknownCommandTest extends AbstractCommandTest {
 
     @Override
     String getCommandName() {

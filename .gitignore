@@ -4,7 +4,7 @@ build/
 .mvn
 !**/src/main/**/target/
 !**/src/test/**/target/
-src/main/resources
+src/main/resources/*.properties
 mvnw
 mvnw.cmd
 # Log file
